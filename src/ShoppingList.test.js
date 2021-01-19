@@ -1,8 +1,11 @@
 import React from 'react';
+import Enzyme from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ShoppingList from './components/ShoppingList';
 
+Enzyme.configure({ adapter: new Adapter() });
 describe(`ShoppingList component`, () => {
   it('renders empty given no items', () => {
     const wrapper = shallow(<ShoppingList />)
