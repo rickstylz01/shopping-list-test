@@ -13,6 +13,13 @@ class App extends React.Component {
     ]
   };
 
+  handleDeleteItem() {
+    console.log('handle delete item called');
+  }
+  handleCheckItem() {
+    console.log('handle check item called');
+  }
+
   render() {
     return (
       // unnecessary div called fragment
@@ -25,7 +32,11 @@ class App extends React.Component {
             <AddItemForm />
           </section>
           <section>
-            <ShoppingList items={this.state.shoppingItems} />
+            <ShoppingList
+              items={this.state.shoppingItems}
+              onDeleteItem={this.handleDeleteItem}
+              onCheckItem={this.handleCheckItem}
+            />
           </section>
         </main>
       </>
