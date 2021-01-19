@@ -1,7 +1,7 @@
 import './App.css';
 import React from "react";
-import AddItemForm from './shopping-list/AddItemForm';
-import ShoppingList from './shopping-list/ShoppingList';
+import AddItemForm from './components/AddItemForm';
+import ShoppingList from './components/ShoppingList';
 
 class App extends React.Component {
   state = {
@@ -13,11 +13,11 @@ class App extends React.Component {
     ]
   };
 
-  handleDeleteItem() {
-    console.log('handle delete item called');
+  handleDeleteItem(item) {
+    console.log('handle delete item called', { item });
   }
-  handleCheckItem() {
-    console.log('handle check item called');
+  handleCheckItem(item) {
+    console.log('handle check item called', { item });
   }
 
   render() {
