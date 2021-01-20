@@ -30,8 +30,15 @@ class App extends React.Component {
       shoppingItems: newItems
     })
   }
+  //Spread syntax can be used when all elements from an object or array need to be included in a list of some kind. It is commonly used when you want to add a new item to a local data store, or display all stored items plus a new addition. A very simple version of this kind of action could look like so:
   handleAddItem = (itemName) => {
-    console.log('handle add item', { itemName })
+    const newItems = [
+      ...this.state.shoppingItems,
+      { name: itemName, checked: false}
+    ]
+    this.setState({
+      shoppingItems: newItems
+    })
   }
 
   render() {
